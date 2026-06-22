@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./inventario.css">
+  <title>Inventario Interactivo</title>
+</head>
+
+<body>
+  <h1>Sistema de Inventario</h1>
+
+  <section class="card">
+    <h3>PRODUCTOS</h3>
+
+    <section class="form-grid">
+      <label for="productoSelect">Producto:</label>
+      <select id="productoSelect">
+        <option value="Laptop">Laptop</option>
+        <option value="Telefono">Telefono</option>
+        <option value="Tablet">Tablet</option>
+        <option value="Monitor">Monitor</option>
+        <option value="Teclado">Teclado</option>
+        <option value="Mouse">Mouse</option>
+        <option value="Audifonos">Audifonos</option>
+        <option value="Parlantes">Parlantes</option>
+        <option value="Camara">Camara</option>
+        <option value="Impresora">Impresora</option>
+        <option value="Escaner">Escaner</option>
+        <option value="Router">Router</option>
+        <option value="DiscoDuro">Disco Duro</option>
+        <option value="MemoriaUSB">Memoria USB</option>
+        <option value="TarjetaSD">Tarjeta SD</option>
+        <option value="Bateria">Bateria</option>
+        <option value="Cargador">Cargador</option>
+        <option value="Funda">Funda</option>
+        <option value="Estuche">Estuche</option>
+        <option value="Silla">Silla</option>
+      </select>
+      <section></section>
+
+      <label for="cantidad">Cantidad:</label>
+      <input type="number" id="cantidad" />
+      <button id="btnAgregar" class="btn-form">Agregar</button>
+
+      <label for="precio">Precio unitario:</label>
+      <input type="number" id="precio" />
+      <section></section>
+    </section>
+
+    <section id="productoInfo">
+      <div id="imagenProducto">
+        <img id="productImage" src="" alt="Producto" />
+      </div>
+    </section>
+  </section>
+
+  <section class="card">
+    <h3>Inventario</h3>
+
+    <table id="tabla">
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Cantidad</th>
+          <th>Precio</th>
+          <th>Total</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <section class="total" id="totalGeneral">Total general: $0</section>
+  </section>
+
+  <script src="./codigo.js" defer></script>
+</body>
+
+</html>

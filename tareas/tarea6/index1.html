@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Control de Parqueadero</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<div class="pantalla-cajero">
+    <h1>PANTALLA DE PAGO DIGITAL</h1>
+    
+    <div class="modulo-vibrante azul">
+        <h2>1. INGRESO DE DATOS AL SISTEMA</h2>
+        
+        <label>Tipo de Vehículo</label>
+        <select id="tipo">
+            <option value="Automovil">Automóvil ($125 / min)</option>
+            <option value="Moto">Moto ($95 / min)</option>
+        </select>
+
+        <label>Placa del Vehículo</label>
+        <input type="text" id="placa" placeholder="Ingrese la placa aquí">
+
+        <label>Fecha y Hora de Ingreso</label>
+        <input type="datetime-local" id="ingreso">
+
+        <label>Fecha y Hora de Salida</label>
+        <input type="datetime-local" id="salida">
+
+        <button onclick="calcular()" class="btn-neon-azul">CALCULAR TARIFA DE ESTACIONAMIENTO</button>
+    </div>
+
+    <div class="modulo-vibrante verde">
+        <h2>2. INSERTE EL DINERO Y RECOJA SU COMPROBANTE</h2>
+        
+        <label>Monto de Dinero a Insertar ($)</label>
+        <input type="number" id="paga" placeholder="¿Con cuánto efectivo paga el cliente?">
+
+        <button onclick="pagar()" class="btn-neon-verde">PROCESAR PAGO Y DAR CAMBIO</button>
+        
+        <label style="margin-top: 25px;">Estructura de Datos (Archivo JSON)</label>
+        <textarea id="json" rows="8" readonly placeholder="El JSON se generará automáticamente al procesar el pago..."></textarea>
+
+        <div style="display: flex; gap: 10px; margin-top: 15px;">
+            <button onclick="exportarJSON()" class="btn-neon-verde" style="flex: 1;">
+                EXPORTAR JSON
+            </button>
+            <button onclick="document.getElementById('importarJSON').click()" class="btn-neon-azul" style="flex: 1;">
+                IMPORTAR JSON
+            </button>
+            <input type="file" id="importarJSON" accept=".json" style="display: none;" onchange="importarJSON(event)">
+        </div>
+    </div>
+</div>
+
+<script src="codigo.js"></script>
+</body>
+</html>

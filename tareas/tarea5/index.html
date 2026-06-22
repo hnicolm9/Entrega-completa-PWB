@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Inventario</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Sistema de Inventario</h1>
+</header>
+
+<main>
+
+    <section class="formulario">
+        <h2>Registro de Movimiento</h2>
+
+        <form id="inventarioForm">
+
+            <label for="producto">Producto</label>
+            <input type="text" id="producto" required>
+
+            <label for="precio">Precio Unitario</label>
+            <input type="number" id="precio" min="0" required>
+
+            <label for="tipo">Tipo de Movimiento</label>
+            <select id="tipo">
+                <option value="entrada">Entrada</option>
+                <option value="salida">Salida</option>
+            </select>
+
+            <label for="cantidad">Cantidad</label>
+            <input type="number" id="cantidad" min="1" required>
+
+            <button type="submit">Guardar Movimiento</button>
+
+        </form>
+    </section>
+
+    <section>
+        <h2>Inventario Actual</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Entradas</th>
+                    <th>Salidas</th>
+                    <th>Saldo</th>
+                    <th>Valor Total</th>
+                </tr>
+            </thead>
+
+            <tbody id="tablaInventario"></tbody>
+
+        </table>
+    </section>
+
+    <section class="resumen">
+        <h2>Total Inventario</h2>
+        <h3 id="totalInventario">$0</h3>
+    </section>
+
+    <section class="acciones">
+        <button id="exportar">Exportar JSON</button>
+
+        <input type="file"
+               id="importarArchivo"
+               accept=".json">
+    </section>
+<footer>
+    <p>&copy - CESDE 2026 - Todos los derechos reservados</p>
+</footer>
+</main>
+<script src="codigo.js"></script>
+</body>
+</html>

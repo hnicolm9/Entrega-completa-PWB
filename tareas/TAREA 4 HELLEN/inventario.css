@@ -1,0 +1,116 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #56458f;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.card {
+  background: rgb(192, 237, 220);
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 700px;
+  margin: auto;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 150px 1fr 120px;
+  gap: 12px 20px;
+  align-items: center;
+}
+
+.btn-form {
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+.form-grid label {
+  font-weight: bold;
+}
+
+.form-grid input,
+.form-grid select {
+  padding: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input,
+button {
+  padding: 8px;
+  margin: 5px 0;
+}
+
+#productoInfo {
+  margin-top: 15px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  padding-top: 15px;
+}
+
+#imagenProducto {
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#productImage {
+  max-width: 150px;
+  max-height: 150px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #000000;
+}
+
+tr.low-stock {
+  background: #ffe6e6;
+}
+
+button {
+  cursor: pointer;
+}
+
+#btnFinalizar {
+  background-color: #2ecc71;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#btnFinalizar:hover {
+  background-color: #122e1e;
+}
+
+.total {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: right;
+}
+
+.edit-input {
+  width: 70px;
+}

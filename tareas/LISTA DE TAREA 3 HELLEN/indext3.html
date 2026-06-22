@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cafeteria</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <h1>CAFETERÍA</h1>
+
+  <section class="productos">
+    <article class="producto" data-nombre="chocolate" data-precio="5000">
+      <img src="./CHOCOLATE.webp" alt="Café" >
+      <h3>postre de chocolate</h3>
+      <p>$ 8.000</p>
+      <button>Comprar</button>
+    </article>
+    <article class="producto" data-nombre="CUERNOS" data-precio="9000" >
+      <img src="./CUERNOS.webp" alt="Pizza">
+      <h3>Croissant</h3>
+      <p>$ 2.000</p>
+      <button>Comprar</button>
+    </article>
+    <article class="producto" data-nombre="Flan" data-precio="2000" >
+      <img src="./FLAN.webp" alt="Agua">
+      <h3></h3>Flan
+      <p>$ 5.000</p>
+      <button>Comprar</button>
+    </article>
+    <article class="producto" data-nombre="Pan" data-precio="5000">
+      <img src="./PAN.jpg" alt="Chocolate">
+      <h3>Pan</h3>
+      <p>$ 2.000</p>
+      <button>Comprar</button>
+    </article>
+    <article class="producto" data-nombre="fresa" data-precio="4000" width="300">
+      <img src="./FRESA.webp" alt="Croissant">
+      <h3>Torta de fresa</h3>
+      <p>$ 6.000</p>
+      <button>Comprar</button>
+    </article>
+   
+  </section>
+
+
+
+  <section class="productos2">
+     <article class="producto" data-nombre="postre" data-precio="3500" width="300">
+      <img src="./POSTRE.webp" alt="Chela">
+      <h3>Patel de chocolate y fresas</h3>
+      <p>$ 8.500</p>
+      <button>Comprar</button>
+    </article>
+      <article class="producto" data-nombre="Batidos" data-precio="3500" width="300">
+      <img src="./batidos.webp" alt="Chela">
+      <h3>Batidos de frutas</h3>
+      <p>$ 8.500</p>
+      <button>Comprar</button>
+    </article>
+      <article class="producto" data-nombre="frutos" data-precio="3500" width="300">
+      <img src="./frutos.webp" alt="Chela">
+      <h3>postre frutos rojos</h3>
+      <p>$ 8.500</p>
+      <button>Comprar</button>
+    </article>
+      <article class="producto" data-nombre="tarta" data-precio="3500" width="300">
+      <img src="./tarta.jpg" alt="Chela">
+      <h3>Tarta </h3>
+      <p>$ 8.500</p>
+      <button>Comprar</button>
+    </article>
+      <article class="producto" data-nombre="Cafe" data-precio="3500" width="300">
+      <img src="./cafe.webp" alt="Chela">
+      <h3>Cafe </h3>
+      <p>$ 2.000</p>
+      <button>Comprar</button>
+    </article>
+  </section>
+
+
+  
+  <section class="carrito">
+    <h2>Carrito de compras</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Item</th>
+          <th>Cantidad</th>
+          <th>Acción</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="5">Carrito vacío - comience a comprar!</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3 id="totalGeneral">Total: $0</h3>
+  </section>
+  <script src="./codigo.js"></script>
+</body>
+</html>
