@@ -1,130 +1,46 @@
-<html lang="es">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis Trabajos - Entrega Completa</title>
+    <title>Mis Trabajos</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background: #f0f2f5;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        h1 {
-            text-align: center;
-            color: #2c3e50;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 10px;
-        }
-        .subtitle {
-            text-align: center;
-            color: #7f8c8d;
-            margin-bottom: 30px;
-        }
-        .section {
-            background: white;
-            border-radius: 10px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .section h2 {
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 8px;
-            margin-top: 0;
-        }
-        .grid-tareas {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-        }
-        .tarea-card {
-            background: #ecf0f1;
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-            text-decoration: none;
-            color: #2c3e50;
-            transition: all 0.3s;
-            font-weight: bold;
-        }
-        .tarea-card:hover {
-            background: #3498db;
-            color: white;
-            transform: scale(1.05);
-        }
-        .certificado-item {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .certificado-item a {
-            background: #3498db;
-            color: white;
-            padding: 8px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-        .certificado-item a:hover {
-            background: #2980b9;
-        }
-        @media (max-width: 600px) {
-            .grid-tareas {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .certificado-item {
-                flex-direction: column;
-                text-align: center;
-            }
-            .certificado-item a {
-                margin-top: 10px;
-            }
-        }
+        body { font-family: Arial; margin: 40px; background: #f0f2f5; }
+        h1 { color: #2c3e50; text-align: center; }
+        .section { background: white; padding: 20px; margin: 20px 0; border-radius: 10px; }
+        .section h2 { color: #34495e; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+        .tarea { background: #ecf0f1; padding: 15px; border-radius: 8px; text-align: center; text-decoration: none; color: #2c3e50; display: block; }
+        .tarea:hover { background: #3498db; color: white; }
+        .certificado { background: #f8f9fa; padding: 15px; border-radius: 8px; margin: 10px 0; display: flex; justify-content: space-between; align-items: center; }
+        .certificado a { background: #3498db; color: white; padding: 8px 20px; border-radius: 5px; text-decoration: none; }
+        .certificado a:hover { background: #2980b9; }
+        @media (max-width: 600px) { .grid { grid-template-columns: repeat(2, 1fr); } }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>?? Entrega Completa de Trabajos</h1>
-        <p class="subtitle">Nicolás - Desarrollo Web</p>
-        
-        <!-- Sección de Tareas -->
-        <div class="section">
-            <h2>?? Mis Tareas</h2>
-            <div class="grid-tareas">
-                <a href="LISTA DE TAREAS HELLEN/index.html" class="tarea-card">#1 Lista de Tareas</a>
-                <a href="LISTA DE TAREAS 2 HELLEN/index.html" class="tarea-card">#2 Lista de Tareas 2</a>
-                <a href="LISTA DE TAREA 3 HELLEN/indext3.html" class="tarea-card">#3 Lista de Tarea 3</a>
-                <a href="TAREA 4 HELLEN/inventario.html" class="tarea-card">#4 Tarea 4</a>
-                <a href="tarea5/index.html" class="tarea-card">#5 Tarea 5</a>
-                <a href="tarea6/index1.html" class="tarea-card">#6 Tarea 6</a>
-            </div>
+    <h1>?? Entrega Completa de Trabajos</h1>
+    <p style="text-align:center;color:#7f8c8d;">Nicolás - Desarrollo Web</p>
+    <div class="section">
+        <h2>?? Mis Tareas</h2>
+        <div class="grid">
+            <a href="tareas/LISTA DE TAREAS HELLEN/index.html" class="tarea">#1 Lista de Tareas</a>
+            <a href="tareas/LISTA DE TAREAS 2 HELLEN/index.html" class="tarea">#2 Lista de Tareas 2</a>
+            <a href="tareas/LISTA DE TAREA 3 HELLEN/indext3.html" class="tarea">#3 Lista de Tarea 3</a>
+            <a href="tareas/TAREA 4 HELLEN/inventario.html" class="tarea">#4 Tarea 4</a>
+            <a href="tareas/tarea5/index.html" class="tarea">#5 Tarea 5</a>
+            <a href="tareas/tarea6/index1.html" class="tarea">#6 Tarea 6</a>
         </div>
-        
-        <!-- Sección de Certificados -->
-        <div class="section">
-            <h2>?? Mis Certificados</h2>
-            <div class="certificado-item">
-                <span>?? Certificado JavaScript</span>
-                <a href="certificados/Certificado Hellen JS.pdf" target="_blank">Ver PDF</a>
-            </div>
-            <div class="certificado-item">
-                <span>?? Certificado DOM</span>
-                <a href="certificados/certificado DOM.pdf" target="_blank">Ver PDF</a>
-            </div>
-        </div>
-        
-        <p style="text-align:center;color:#95a5a6;margin-top:30px;">
-            Última actualización: junio 2026
-        </p>
     </div>
+    <div class="section">
+        <h2>?? Mis Certificados</h2>
+        <div class="certificado">
+            <span>?? Certificado JavaScript</span>
+            <a href="certificados/Certificado Hellen JS.pdf" target="_blank">Ver PDF</a>
+        </div>
+        <div class="certificado">
+            <span>?? Certificado DOM</span>
+            <a href="certificados/certificado DOM.pdf" target="_blank">Ver PDF</a>
+        </div>
+    </div>
+    <p style="text-align:center;color:#95a5a6;margin-top:30px;">Última actualización: junio 2026</p>
 </body>
 </html>
