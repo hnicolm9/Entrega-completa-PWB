@@ -21,9 +21,16 @@ function calcular() {
     let horaExactaIn = f1.getHours() + (f1.getMinutes() / 60);
     let horaExactaOut = f2.getHours() + (f2.getMinutes() / 60);
 
-    if (horaExactaIn < 5 || horaExactaIn > 24 || (horaExactaOut < 5 && horaExactaOut !== 0) || horaExactaOut > 24) {
-        alert("ERROR: El parqueadero esta cerrado. Solo funciona de 5:00 AM a 12:00 PM (Noche).");
+    // CORRECCIÓN: Validar que esté dentro del horario de 5:00 AM a 11:59 PM
+    // El parqueadero cierra a las 12:00 AM (medianoche = hora 0)
+    if (horaExactaIn < 5 || horaExactaIn >= 24 || horaExactaOut < 5 || horaExactaOut >= 24) {
+        alert("ERROR: El parqueadero esta cerrado. Solo funciona de 5:00 AM a 12:00 AM (Medianoche).");
         return;
+    }
+
+    // Si la salida es a las 12:00 AM (medianoche), son las 0 horas pero permitido
+    if (horaExactaOut === 0 && horaExactaIn > 0) {
+        // Es válido, sigue adelante
     }
 
     fecha = txt1.split("T")[0];
@@ -140,4 +147,68 @@ function pagar() {
         "}";
 
     document.getElementById("json").value = textoJson;
+}
+
+    
+function exportarJSON() {
+    const jsonData = document.getElementById("json").value;
+    
+    if (!jsonData || jsonData.trim() === "") {
+        alert("ERROR: No hay datos para exportar. Primero procesa un pago.");
+        return;
+    }
+
+    const blob = new Blob([jsonData], { type: "application/json" });
+    const enlace = document.createElement("a");
+    enlace.href = URL.createObjectURL(blob);
+    enlace.download = `parqueadero_${fecha || "sin_fecha"}.json`;
+    enlace.click();
+    
+    alert("JSON exportado exitosamente!");
+}
+
+function importarJSON(event) {
+    const archivo = event.target.files[0];
+    
+    if (!archivo) return;
+
+    const lector = new FileReader();
+    
+    lector.onload = function(e) {
+        try {
+            const datos = JSON.parse(e.target.result);
+            
+            document.getElementById("json").value = JSON.stringify(datos, null, 2);
+            
+            if (datos["Fecha"]) {
+                const fechaIngreso = datos["Fecha"] + "T00:00";
+                document.getElementById("ingreso").value = fechaIngreso;
+                document.getElementById("salida").value = fechaIngreso;
+                
+                if (datos["Tipo de vehiculo"]) {
+                    const select = document.getElementById("tipo");
+                    for (let option of select.options) {
+                        if (option.value === datos["Tipo de vehiculo"]) {
+                            select.value = option.value;
+                            break;
+                        }
+                    }
+                }
+                
+                if (datos["Placa del vehiculo"]) {
+                    document.getElementById("placa").value = datos["Placa del vehiculo"];
+                }
+            }
+            
+            alert("JSON importado exitosamente!");
+            
+        } catch (error) {
+            alert("ERROR: El archivo no es un JSON válido.");
+            console.error(error);
+        }
+    };
+    
+    lector.readAsText(archivo);
+    
+    event.target.value = "";
 }
